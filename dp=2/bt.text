@@ -1,0 +1,90 @@
+Dưới đây là danh sách các bài tập quy hoạch động (Dynamic Programming) hai chiều từ cơ bản đến nâng cao. Tôi cũng kèm theo các ý tưởng chính để giải quyết chúng và một số trang chấm bài trực tuyến.
+
+---
+
+### 1. **Bài cơ bản**
+#### **1.1. Bài toán con đường ngắn nhất trên bảng (Grid)**
+- **Đề bài**: Cho bảng \( m \times n \) chứa các số nguyên không âm. Tìm tổng giá trị nhỏ nhất từ ô trên cùng bên trái đến ô dưới cùng bên phải. Bạn chỉ được di chuyển xuống hoặc sang phải.
+- **Ý tưởng**: 
+  - Dùng mảng `dp[i][j]` lưu tổng nhỏ nhất từ ô \( (0, 0) \) đến ô \( (i, j) \).
+  - Công thức: \( dp[i][j] = \text{min}(dp[i-1][j], dp[i][j-1]) + \text{grid}[i][j] \).
+- **Link bài tập**:
+  - [LeetCode 64: Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+
+---
+
+#### **1.2. Bài toán đếm đường đi trên bảng (Unique Paths)**
+- **Đề bài**: Cho bảng \( m \times n \). Tìm số lượng đường đi từ ô trên cùng bên trái đến ô dưới cùng bên phải. Bạn chỉ được di chuyển xuống hoặc sang phải.
+- **Ý tưởng**:
+  - Dùng mảng `dp[i][j]` lưu số cách đi từ ô \( (0, 0) \) đến \( (i, j) \).
+  - Công thức: \( dp[i][j] = dp[i-1][j] + dp[i][j-1] \) (với điều kiện chỉ số hợp lệ).
+- **Link bài tập**:
+  - [LeetCode 62: Unique Paths](https://leetcode.com/problems/unique-paths/)
+
+---
+
+### 2. **Bài toán tầm trung**
+#### **2.1. Bài toán xếp balô 2 chiều (2D Knapsack)**
+- **Đề bài**: Cho các vật có trọng lượng \( w \) và giá trị \( v \), và hai giới hạn \( W \) (trọng lượng tối đa) và \( H \) (chiều cao tối đa). Tìm giá trị lớn nhất có thể lấy mà không vượt quá giới hạn.
+- **Ý tưởng**:
+  - Dùng mảng `dp[w][h]` lưu giá trị lớn nhất khi sử dụng tối đa \( w \) trọng lượng và \( h \) chiều cao.
+  - Công thức:
+    \( dp[w][h] = \text{max}(dp[w][h], dp[w-w_i][h-h_i] + v_i) \).
+- **Link bài tập**:
+  - [Kattis: Knapsack 2D](https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card)
+
+---
+
+#### **2.2. Bài toán xâu con chung dài nhất (Longest Common Subsequence)**
+- **Đề bài**: Cho hai xâu \( A \) và \( B \). Tìm độ dài xâu con chung dài nhất của chúng.
+- **Ý tưởng**:
+  - Dùng mảng `dp[i][j]` lưu độ dài xâu con chung của \( A[0..i-1] \) và \( B[0..j-1] \).
+  - Công thức:
+    - Nếu \( A[i] == B[j] \): \( dp[i][j] = dp[i-1][j-1] + 1 \).
+    - Ngược lại: \( dp[i][j] = \text{max}(dp[i-1][j], dp[i][j-1]) \).
+- **Link bài tập**:
+  - [HackerRank: Longest Common Subsequence](https://www.hackerrank.com/challenges/dynamic-programming-classics-the-longest-common-subsequence)
+
+---
+
+### 3. **Bài toán nâng cao**
+#### **3.1. Bài toán chuỗi Palindrome dài nhất (Longest Palindromic Subsequence)**
+- **Đề bài**: Cho một chuỗi \( S \). Tìm độ dài của chuỗi con Palindrome dài nhất trong \( S \).
+- **Ý tưởng**:
+  - Dùng mảng `dp[i][j]` lưu độ dài chuỗi con Palindrome dài nhất từ \( S[i] \) đến \( S[j] \).
+  - Công thức:
+    - Nếu \( S[i] == S[j] \): \( dp[i][j] = dp[i+1][j-1] + 2 \).
+    - Ngược lại: \( dp[i][j] = \text{max}(dp[i+1][j], dp[i][j-1]) \).
+- **Link bài tập**:
+  - [LeetCode 516: Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+
+---
+
+#### **3.2. Bài toán tập con vuông lớn nhất (Maximal Square)**
+- **Đề bài**: Cho bảng nhị phân \( m \times n \). Tìm diện tích hình vuông lớn nhất mà tất cả các ô của nó đều bằng \( 1 \).
+- **Ý tưởng**:
+  - Dùng mảng `dp[i][j]` lưu kích thước hình vuông lớn nhất có góc dưới cùng bên phải tại ô \( (i, j) \).
+  - Công thức:
+    - Nếu \( \text{grid}[i][j] == 1 \): \( dp[i][j] = \text{min}(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1 \).
+  - Kết quả là \( \text{max}(dp[i][j]^2) \).
+- **Link bài tập**:
+  - [LeetCode 221: Maximal Square](https://leetcode.com/problems/maximal-square/)
+
+---
+
+#### **3.3. Bài toán chọn hình chữ nhật con có tổng lớn nhất (Maximum Sum Rectangle)**
+- **Đề bài**: Cho bảng \( m \times n \) chứa các số nguyên. Tìm hình chữ nhật con có tổng các phần tử lớn nhất.
+- **Ý tưởng**:
+  - Biến bài toán 2D thành 1D bằng cách cố định hai hàng, sau đó dùng thuật toán Kadane để tìm tổng lớn nhất trên các cột giữa hai hàng.
+- **Link bài tập**:
+  - [GeeksForGeeks: Maximum Sum Rectangle in a 2D Matrix](https://practice.geeksforgeeks.org/problems/maximum-sum-rectangle/0)
+
+---
+
+### Lưu ý:
+Bạn có thể tham khảo và chấm bài trên các trang trực tuyến:
+- **[LeetCode](https://leetcode.com/)**
+- **[HackerRank](https://www.hackerrank.com/)**
+- **[Codeforces](https://codeforces.com/)**
+- **[Kattis](https://open.kattis.com/)**
+- **[AtCoder](https://atcoder.jp/)**

@@ -1,0 +1,225 @@
+Dưới đây là một số bài tập thú vị về Segment Tree với nhiều mức độ khó khác nhau. Các bài tập này sẽ giúp bạn nắm vững kiến thức và kỹ năng về Segment Tree trong lập trình.
+
+---
+
+### Bài tập cơ bản
+
+1. **Tổng một đoạn**  
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tính tổng các phần tử trong khoảng `[l, r]` và cho phép cập nhật giá trị tại một vị trí bất kỳ trong mảng.
+   - **Yêu cầu**: Viết một Segment Tree để hỗ trợ tính tổng đoạn và cập nhật giá trị tại một chỉ số.
+   - **Độ khó**: Dễ
+
+2. **Min một đoạn**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tìm giá trị nhỏ nhất trong khoảng `[l, r]` và cho phép cập nhật giá trị tại một vị trí bất kỳ.
+   - **Yêu cầu**: Viết một Segment Tree để hỗ trợ truy vấn giá trị nhỏ nhất trên đoạn và cập nhật giá trị tại một chỉ số.
+   - **Độ khó**: Dễ
+
+3. **Đếm số lượng số lớn hơn k trong đoạn**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu đếm số phần tử lớn hơn hoặc bằng `k` trong đoạn `[l, r]`.
+   - **Yêu cầu**: Viết một Segment Tree để hỗ trợ truy vấn đếm số lượng phần tử lớn hơn hoặc bằng `k` trong đoạn `[l, r]`.
+   - **Độ khó**: Trung bình
+
+---
+
+### Bài tập nâng cao
+
+4. **Cập nhật đoạn, truy vấn đoạn (Range Update, Range Query)**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử, mỗi truy vấn yêu cầu cộng thêm một số `x` vào tất cả các phần tử trong đoạn `[l, r]`, và yêu cầu tính tổng đoạn `[l, r]`.
+   - **Yêu cầu**: Xây dựng Segment Tree hỗ trợ `Range Update` và `Range Query` sử dụng lazy propagation.
+   - **Độ khó**: Khó
+
+5. **Product một đoạn**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tính tích của các phần tử trong đoạn `[l, r]` và có phép cập nhật một giá trị trong mảng.
+   - **Yêu cầu**: Xây dựng một Segment Tree để hỗ trợ phép tính tích đoạn và cập nhật.
+   - **Độ khó**: Khó
+
+6. **Đếm số lượng số dương trong đoạn**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu đếm số phần tử dương trong đoạn `[l, r]`.
+   - **Yêu cầu**: Xây dựng Segment Tree để hỗ trợ đếm số lượng số dương trên đoạn và có khả năng cập nhật giá trị tại một chỉ số bất kỳ.
+   - **Độ khó**: Trung bình
+
+---
+
+### Bài tập chuyên sâu
+
+7. **Truy vấn đoạn XOR**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tính toán XOR của tất cả các phần tử trong đoạn `[l, r]`.
+   - **Yêu cầu**: Xây dựng Segment Tree để hỗ trợ phép tính XOR trên đoạn và có khả năng cập nhật giá trị tại một chỉ số bất kỳ.
+   - **Độ khó**: Khó
+
+8. **Số lượng số nguyên tố trong đoạn**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu đếm số lượng số nguyên tố trong đoạn `[l, r]`.
+   - **Yêu cầu**: Sử dụng Segment Tree và thuật toán phân tích số nguyên tố để giải quyết yêu cầu truy vấn số lượng số nguyên tố trong đoạn.
+   - **Độ khó**: Rất khó
+
+9. **Đoạn con tăng dài nhất**
+   - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tìm độ dài của đoạn con tăng dài nhất trong khoảng `[l, r]`.
+   - **Yêu cầu**: Xây dựng Segment Tree để hỗ trợ truy vấn độ dài đoạn con tăng dài nhất và cho phép cập nhật giá trị tại một chỉ số.
+   - **Độ khó**: Rất khó
+
+---
+
+### Bài tập thách thức
+
+10. **Truy vấn k-th smallest (k-th nhỏ nhất) trong đoạn**
+    - **Mô tả**: Cho mảng `a` có `n` phần tử và thực hiện `q` truy vấn, mỗi truy vấn yêu cầu tìm phần tử nhỏ thứ `k` trong đoạn `[l, r]`.
+    - **Yêu cầu**: Sử dụng Segment Tree nâng cao (hoặc Segment Tree với cấu trúc bổ sung) để tìm phần tử nhỏ thứ `k` trong một đoạn.
+    - **Độ khó**: Rất khó
+
+11. **Truy vấn 2D trên lưới với Segment Tree 2D**
+    - **Mô tả**: Cho một lưới `n x m` các giá trị nguyên, yêu cầu xử lý truy vấn tổng các phần tử trong một vùng hình chữ nhật `[x1, y1, x2, y2]` và hỗ trợ cập nhật giá trị tại một vị trí `(x, y)`.
+    - **Yêu cầu**: Xây dựng Segment Tree 2D để hỗ trợ truy vấn tổng trên vùng và cập nhật tại một điểm.
+    - **Độ khó**: Rất khó
+
+---
+
+Các bài tập này giúp bạn rèn luyện khả năng sử dụng Segment Tree để giải quyết các vấn đề về truy vấn và cập nhật trên đoạn, một kỹ năng quan trọng trong lập trình và các kỳ thi lập trình cạnh tranh. Nếu bạn cần hướng dẫn chi tiết hoặc lời giải cho từng bài, mình có thể giúp bạn phân tích từng bài một cách chi tiết hơn.
+
+
+
+
+
+
+2
+#include <bits/stdc++.h>
+using namespace std;
+
+class SegmentTree {
+    vector<int> seg;
+    int n;
+
+    void build(int ind, int low, int high, vector<int>& arr) {
+        if (low == high) {
+            seg[ind] = arr[low];
+            return;
+        }
+        int mid = (low + high) / 2;
+        build(2 * ind + 1, low, mid, arr);
+        build(2 * ind + 2, mid + 1, high, arr);
+        seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
+    }
+
+    void update(int ind, int low, int high, int pos, int value) {
+        if (low == high) {
+            seg[ind] = value;
+            return;
+        }
+        int mid = (low + high) / 2;
+        if (pos <= mid)
+            update(2 * ind + 1, low, mid, pos, value);
+        else
+            update(2 * ind + 2, mid + 1, high, pos, value);
+
+        seg[ind] = min(seg[2 * ind + 1], seg[2 * ind + 2]);
+    }
+
+    int query(int ind, int low, int high, int l, int r) {
+        if (r < low || l > high)
+            return INT_MAX;  // Giá trị vô hạn (không ảnh hưởng đến min).
+        if (l <= low && r >= high)
+            return seg[ind];
+        int mid = (low + high) / 2;
+        int left = query(2 * ind + 1, low, mid, l, r);
+        int right = query(2 * ind + 2, mid + 1, high, l, r);
+        return min(left, right);
+    }
+
+public:
+    SegmentTree(vector<int>& arr) {
+        n = arr.size();
+        seg.resize(4 * n, INT_MAX);
+        build(0, 0, n - 1, arr);
+    }
+
+    void update(int pos, int value) {
+        update(0, 0, n - 1, pos, value);
+    }
+
+    int query(int l, int r) {
+        return query(0, 0, n - 1, l, r);
+    }
+};
+
+int main() {
+    int n, q;
+    cin >> n >> q;  // Nhập số phần tử và số truy vấn.
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+
+    SegmentTree st(arr);
+
+    while (q--) {
+        string type;
+        cin >> type;
+        if (type == "query") {  // Truy vấn giá trị nhỏ nhất.
+            int l, r;
+            cin >> l >> r;
+            cout << st.query(l, r) << '\n';
+        } else if (type == "update") {  // Cập nhật giá trị tại một chỉ số.
+            int pos, value;
+            cin >> pos >> value;
+            st.update(pos, value);
+        }
+    }
+
+    return 0;
+}
+
+
+6
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> a, t;   
+int n;
+
+void build(int i, int l, int r) {
+    if (l == r) {
+        t[i] = a[l] > 0 ? 1 : 0; // Giá trị tại nút lá
+        return;
+    }
+    int mid = (l + r) / 2;
+    build(2 * i, l, mid); // Xây dựng con trái
+    build(2 * i + 1, mid + 1, r); // Xây dựng con phải
+    t[i] = t[2 * i] + t[2 * i + 1]; // Tính giá trị nút hiện tại
+}
+
+void update(int i, int l, int r, int pos, int val) {
+    if (l == r) {
+        a[pos] = val; // Cập nhật mảng gốc
+        t[i] = val > 0 ? 1 : 0; // Cập nhật nút
+        return;
+    }
+    int mid = (l + r) / 2;
+    if (pos <= mid)
+        update(2 * i, l, mid, pos, val); // Cập nhật con trái
+    else
+        update(2 * i + 1, mid + 1, r, pos, val); // Cập nhật con phải
+    t[i] = t[2 * i] + t[2 * i + 1]; // Tính lại nút cha
+}
+
+int query(int i, int l, int r, int tl, int tr) {
+    if (tl > tr) return 0; // Nếu đoạn rỗng, trả về 0
+    if (tl == l && tr == r) return t[i]; // Đoạn nằm hoàn toàn trong nút hiện tại
+    int mid = (l + r) / 2;
+    int left = query(2 * i, l, mid, tl, min(tr, mid)); // Truy vấn con trái
+    int right = query(2 * i + 1, mid + 1, r, max(tl, mid + 1), tr); // Truy vấn con phải
+    return left + right; // Tổng kết quả từ hai bên
+}
+
+
+int main(){
+    cin >> n;
+    a.resize(n + 1);
+    t.resize(4 * n + 1);
+
+    for(int i = 0; i < n; ++i){
+        cin >> a[i];
+    }
+
+
+
+
+    return 0;
+}

@@ -1,0 +1,164 @@
+Dưới đây là một vài bài tập quy hoạch động (DP) 2 chiều nâng cao, giúp bạn rèn luyện tư duy giải thuật tốt hơn:
+
+---
+
+### **1. [Biến đổi chuỗi thành chuỗi con khác (Edit Distance)]**
+#### Mô tả:
+Cho hai chuỗi \( X \) và \( Y \), tìm số lượng thao tác tối thiểu cần thực hiện để biến đổi chuỗi \( X \) thành chuỗi \( Y \). Bạn được phép thực hiện 3 thao tác:
+1. Thêm một ký tự.
+2. Xóa một ký tự.
+3. Thay thế một ký tự.
+
+#### Input:
+- Chuỗi \( X \) có độ dài \( m \), chuỗi \( Y \) có độ dài \( n \).
+
+#### Output:
+- Trả về số lượng thao tác tối thiểu.
+
+#### Gợi ý:
+- Sử dụng mảng DP \( dp[i][j] \), trong đó \( dp[i][j] \) là số thao tác tối thiểu để biến \( X[0:i-1] \) thành \( Y[0:j-1] \).
+
+---
+
+### **2. [Đường đi ngắn nhất từ góc trên đến góc dưới (Minimum Path Sum)]**
+#### Mô tả:
+Cho một ma trận \( grid \) kích thước \( n \times m \), mỗi ô chứa một số nguyên dương. Tìm tổng nhỏ nhất của các ô trên đường đi từ góc trên bên trái đến góc dưới bên phải. Bạn chỉ có thể di chuyển **xuống** hoặc **sang phải**.
+
+#### Input:
+- Ma trận \( grid \) kích thước \( n \times m \).
+
+#### Output:
+- Trả về tổng nhỏ nhất.
+
+#### Gợi ý:
+- \( dp[i][j] \) lưu trữ tổng nhỏ nhất để đi tới ô \( (i, j) \).
+- Công thức truy hồi:
+\[
+dp[i][j] = grid[i][j] + \min(dp[i-1][j], dp[i][j-1])
+\]
+- Với \( dp[0][0] = grid[0][0] \).
+
+---
+
+### **3. [Cắt thanh gỗ (Rod Cutting)]**
+#### Mô tả:
+Cho một thanh gỗ dài \( L \) và danh sách các đoạn cắt khả dụng \( \text{cuts} \). Tìm cách cắt thanh gỗ để tổng chi phí là nhỏ nhất. Chi phí cắt thanh gỗ là độ dài của thanh gỗ hiện tại.
+
+#### Input:
+- \( L \): độ dài thanh gỗ.
+- \( cuts[] \): mảng chứa vị trí các đoạn cắt (tăng dần).
+
+#### Output:
+- Chi phí tối thiểu để cắt hết các đoạn.
+
+#### Gợi ý:
+- \( dp[i][j] \) là chi phí nhỏ nhất để cắt đoạn từ \( cuts[i] \) đến \( cuts[j] \).
+- Công thức truy hồi:
+\[
+dp[i][j] = \min_{k}(dp[i][k] + dp[k][j] + \text{chiều dài đoạn })
+\]
+
+---
+
+### **4. [Chuỗi con chung dài nhất (Longest Common Subsequence)]**
+#### Mô tả:
+Cho hai chuỗi \( X \) và \( Y \). Tìm độ dài chuỗi con chung dài nhất giữa \( X \) và \( Y \).
+
+#### Input:
+- \( X \) và \( Y \): các chuỗi có độ dài \( m \) và \( n \).
+
+#### Output:
+- Trả về độ dài chuỗi con chung dài nhất.
+
+#### Gợi ý:
+- \( dp[i][j] \): độ dài chuỗi con chung dài nhất giữa \( X[0:i-1] \) và \( Y[0:j-1] \).
+- Công thức:
+\[
+dp[i][j] = 
+\begin{cases} 
+1 + dp[i-1][j-1] & \text{nếu } X[i-1] = Y[j-1] \\
+\max(dp[i-1][j], dp[i][j-1]) & \text{nếu } X[i-1] \neq Y[j-1]
+\end{cases}
+\]
+
+---
+
+### **5. [Đếm số đường đi trong lưới (Unique Paths)]**
+#### Mô tả:
+Cho một lưới \( m \times n \). Tính số đường đi từ góc trên bên trái đến góc dưới bên phải nếu bạn chỉ được phép di chuyển **sang phải** hoặc **xuống dưới**.
+
+#### Input:
+- \( m \): số hàng.
+- \( n \): số cột.
+
+#### Output:
+- Trả về số lượng đường đi.
+
+#### Gợi ý:
+- \( dp[i][j] \): số đường đi để đến ô \( (i, j) \).
+- Công thức:
+\[
+dp[i][j] = dp[i-1][j] + dp[i][j-1]
+\]
+
+---
+
+### **6. [Nhảy trên lưới tối ưu (Minimum Falling Path Sum)]**
+#### Mô tả:
+Cho một ma trận \( grid \) kích thước \( n \times n \), trong đó mỗi ô chứa một số nguyên. Tìm tổng nhỏ nhất của một đường đi từ hàng trên cùng đến hàng dưới cùng. Tại mỗi ô \( grid[i][j] \), bạn có thể di chuyển:
+- Thẳng xuống (\( i+1, j \)).
+- Chéo trái xuống (\( i+1, j-1 \)).
+- Chéo phải xuống (\( i+1, j+1 \)).
+
+#### Input:
+- Ma trận \( grid \) kích thước \( n \times n \).
+
+#### Output:
+- Trả về tổng nhỏ nhất của đường đi.
+
+#### Gợi ý:
+- \( dp[i][j] \): tổng nhỏ nhất của đường đi đến ô \( (i, j) \).
+- Công thức:
+\[
+dp[i][j] = \text{grid}[i][j] + \min(dp[i-1][j-1], dp[i-1][j], dp[i-1][j+1])
+\]
+
+---
+
+### **7. [Đếm hình chữ nhật trong ma trận (Count Submatrices with All Ones)]**
+#### Mô tả:
+Cho một ma trận nhị phân \( matrix \), đếm số lượng hình chữ nhật chỉ chứa toàn số 1 trong ma trận.
+
+#### Input:
+- Ma trận \( matrix \) kích thước \( n \times m \).
+
+#### Output:
+- Trả về số lượng hình chữ nhật.
+
+#### Gợi ý:
+- \( dp[i][j] \): số lượng hình chữ nhật tận cùng tại ô \( (i, j) \).
+- Công thức:
+Nếu \( \text{matrix}[i][j] = 1 \):
+\[
+dp[i][j] = dp[i][j-1] + 1
+\]
+Sau đó tính số lượng hình chữ nhật kết thúc tại \( (i, j) \) bằng cách duyệt ngược lên phía trên hàng.
+
+---
+
+### **8. [Tách mảng thành các tập con có tổng bằng nhau (Partition Equal Subset Sum)]**
+#### Mô tả:
+Cho một mảng \( nums \), kiểm tra xem có thể chia mảng thành hai tập con không giao nhau sao cho tổng các phần tử của mỗi tập con là bằng nhau.
+
+#### Input:
+- \( nums \): một mảng số nguyên không âm.
+
+#### Output:
+- Trả về `true` nếu có thể chia được, ngược lại `false`.
+
+#### Gợi ý:
+- Sử dụng \( dp[i][j] \), trong đó \( dp[i][j] = 1 \) nếu có thể tạo ra tổng \( j \) bằng cách sử dụng các phần tử đầu tiên \( i \).
+
+---
+
+Hãy thử giải các bài toán này để nâng cao kỹ năng của bạn trong quy hoạch động! Nếu bạn gặp khó khăn ở bài nào, mình có thể giải thích thêm! 😊

@@ -1,0 +1,157 @@
+Dưới đây là danh sách một vài bài toán về cây trên **LeetCode** cùng hướng dẫn xử lý:
+
+---
+
+### **1. Binary Tree Inorder Traversal (Medium)**
+- **Link**: [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+- **Mô tả**:
+  Duyệt cây nhị phân theo thứ tự **Inorder** (trái -> gốc -> phải).
+- **Hướng dẫn**:
+  Sử dụng đệ quy hoặc vòng lặp với stack để duyệt cây.
+- **Code mẫu**:
+  ```cpp
+  void inorder(TreeNode* root, vector<int>& result) {
+      if (!root) return;
+      inorder(root->left, result);
+      result.push_back(root->val);
+      inorder(root->right, result);
+  }
+
+  vector<int> inorderTraversal(TreeNode* root) {
+      vector<int> result;
+      inorder(root, result);
+      return result;
+  }
+  ```
+
+---
+
+### **2. Maximum Depth of Binary Tree (Easy)**
+- **Link**: [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- **Mô tả**:
+  Tìm độ sâu lớn nhất của cây nhị phân.
+- **Hướng dẫn**:
+  Sử dụng đệ quy tính độ sâu.
+- **Code mẫu**:
+  ```cpp
+  int maxDepth(TreeNode* root) {
+      if (!root) return 0;
+      return 1 + max(maxDepth(root->left), maxDepth(root->right));
+  }
+  ```
+
+---
+
+### **3. Lowest Common Ancestor of a Binary Tree (Medium)**
+- **Link**: [Lowest Common Ancestor](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+- **Mô tả**:
+  Tìm **LCA** (nút cha chung gần nhất) của hai nút trong cây nhị phân.
+- **Hướng dẫn**:
+  Sử dụng đệ quy kiểm tra nút hiện tại có chứa cả hai nút không.
+- **Code mẫu**:
+  ```cpp
+  TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+      if (!root || root == p || root == q) return root;
+      TreeNode* left = lowestCommonAncestor(root->left, p, q);
+      TreeNode* right = lowestCommonAncestor(root->right, p, q);
+      return left && right ? root : left ? left : right;
+  }
+  ```
+
+---
+
+### **4. Diameter of Binary Tree (Easy)**
+- **Link**: [Diameter of Binary Tree](https://leetcode.com/problems/diameter-of-binary-tree/)
+- **Mô tả**:
+  Tính đường kính của cây nhị phân (đường đi dài nhất giữa hai nút bất kỳ).
+- **Hướng dẫn**:
+  Sử dụng DFS và cập nhật đường kính tại mỗi nút.
+- **Code mẫu**:
+  ```cpp
+  int diameter = 0;
+  int dfs(TreeNode* root) {
+      if (!root) return 0;
+      int left = dfs(root->left);
+      int right = dfs(root->right);
+      diameter = max(diameter, left + right);
+      return max(left, right) + 1;
+  }
+
+  int diameterOfBinaryTree(TreeNode* root) {
+      dfs(root);
+      return diameter;
+  }
+  ```
+
+---
+
+### **5. Path Sum (Easy)**
+- **Link**: [Path Sum](https://leetcode.com/problems/path-sum/)
+- **Mô tả**:
+  Kiểm tra xem có đường đi từ gốc đến lá nào có tổng bằng giá trị mục tiêu không.
+- **Hướng dẫn**:
+  Trừ giá trị nút khỏi mục tiêu khi duyệt qua các nút, kiểm tra tại lá.
+- **Code mẫu**:
+  ```cpp
+  bool hasPathSum(TreeNode* root, int targetSum) {
+      if (!root) return false;
+      targetSum -= root->val;
+      if (!root->left && !root->right) return targetSum == 0;
+      return hasPathSum(root->left, targetSum) || hasPathSum(root->right, targetSum);
+  }
+  ```
+
+---
+
+### **6. Symmetric Tree (Easy)**
+- **Link**: [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
+- **Mô tả**:
+  Kiểm tra xem cây nhị phân có đối xứng không.
+- **Hướng dẫn**:
+  So sánh hai nhánh trái và phải của cây.
+- **Code mẫu**:
+  ```cpp
+  bool isMirror(TreeNode* t1, TreeNode* t2) {
+      if (!t1 && !t2) return true;
+      if (!t1 || !t2 || t1->val != t2->val) return false;
+      return isMirror(t1->left, t2->right) && isMirror(t1->right, t2->left);
+  }
+
+  bool isSymmetric(TreeNode* root) {
+      return !root || isMirror(root->left, root->right);
+  }
+  ```
+
+---
+
+### **7. Construct Binary Tree from Inorder and Postorder Traversal (Medium)**
+- **Link**: [Construct Binary Tree](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
+- **Mô tả**:
+  Xây dựng cây nhị phân từ hai mảng **Inorder** và **Postorder**.
+- **Hướng dẫn**:
+  Duyệt ngược từ **Postorder** để tìm nút gốc, phân mảng **Inorder** để tìm nhánh con trái và phải.
+- **Code mẫu**:
+  ```cpp
+  TreeNode* build(vector<int>& inorder, vector<int>& postorder, int inStart, int inEnd, int& postIndex) {
+      if (inStart > inEnd) return nullptr;
+      TreeNode* root = new TreeNode(postorder[postIndex--]);
+      int inIndex = find(inorder.begin(), inorder.end(), root->val) - inorder.begin();
+      root->right = build(inorder, postorder, inIndex + 1, inEnd, postIndex);
+      root->left = build(inorder, postorder, inStart, inIndex - 1, postIndex);
+      return root;
+  }
+
+  TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+      int postIndex = postorder.size() - 1;
+      return build(inorder, postorder, 0, inorder.size() - 1, postIndex);
+  }
+  ```
+
+---
+
+### **Lời khuyên**
+- **Bắt đầu từ các bài dễ** để quen với cấu trúc cây và các thuật toán như DFS, BFS.
+- **Duyệt cây (traversal)** là kỹ năng cơ bản, vì vậy hãy thành thạo Inorder, Preorder, Postorder.
+- Dần dần, chuyển sang các bài phức tạp như tìm LCA, đường kính, hoặc xây dựng cây.
+
+Nếu bạn muốn giải bài nào cụ thể hơn, mình có thể hỗ trợ phân tích chi tiết! 😊

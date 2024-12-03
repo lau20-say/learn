@@ -1,0 +1,101 @@
+Dưới đây là danh sách các bài toán sử dụng quy hoạch động 2 chiều, có độ khó nằm giữa trung bình và khó. Các bài này yêu cầu bạn phải tư duy thêm về cách xây dựng trạng thái và chuyển trạng thái:
+
+---
+
+### **1. "Largest Rectangle in Histogram"**  
+- **Mô tả**: Cho một histogram (dãy cột dọc) với chiều cao được biểu diễn bằng một mảng số nguyên. Tìm diện tích lớn nhất của hình chữ nhật có thể được tạo bởi các cột liên tiếp.  
+- **Ý tưởng giải quyết**:  
+  - Chuyển bài toán thành tính toán DP cho mỗi cột.
+  - Tìm **chiều cao tối thiểu** giữa các cột để mở rộng vùng chữ nhật.
+
+- **Link chấm bài**:  
+  - [Leetcode 84 - Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+
+---
+
+### **2. "Counting Squares"**  
+- **Mô tả**: Cho một ma trận nhị phân `matrix`. Đếm tổng số hình vuông (các kích thước) chứa toàn số `1`.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là số hình vuông kết thúc tại ô `(i, j)`.  
+  - Công thức: `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`.
+
+- **Link chấm bài**:  
+  - [Leetcode 1277 - Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
+
+---
+
+### **3. "Palindromic Substrings"**  
+- **Mô tả**: Cho một chuỗi `s`, tìm tổng số chuỗi con là chuỗi đối xứng (palindrome).  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là `true` nếu chuỗi con `s[i..j]` là palindrome.  
+  - Công thức:  
+    - `dp[i][j] = true` nếu `s[i] == s[j]` và `dp[i+1][j-1]` là `true`.  
+
+- **Link chấm bài**:  
+  - [Leetcode 647 - Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+
+---
+
+### **4. "Burst Balloons"**  
+- **Mô tả**: Bạn được cho một mảng bóng bay, mỗi bóng có điểm số. Khi bạn nổ bóng `i`, bạn được điểm `nums[i-1] * nums[i] * nums[i+1]`. Tính số điểm tối đa có thể đạt được.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là điểm tối đa khi chỉ nổ bóng từ `i` đến `j`.  
+  - Công thức:  
+    - `dp[i][j] = max(dp[i][k-1] + nums[i-1]*nums[k]*nums[j+1] + dp[k+1][j])` với `k` chạy từ `i` đến `j`.
+
+- **Link chấm bài**:  
+  - [Leetcode 312 - Burst Balloons](https://leetcode.com/problems/burst-balloons/)
+
+---
+
+### **5. "Longest Palindromic Subsequence"**  
+- **Mô tả**: Cho một chuỗi `s`, tìm độ dài của chuỗi con đối xứng dài nhất.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là độ dài chuỗi đối xứng dài nhất trong `s[i..j]`.  
+  - Công thức:  
+    - Nếu `s[i] == s[j]`: `dp[i][j] = dp[i+1][j-1] + 2`.  
+    - Ngược lại: `dp[i][j] = max(dp[i+1][j], dp[i][j-1])`.
+
+- **Link chấm bài**:  
+  - [Leetcode 516 - Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+
+---
+
+### **6. "Partition Equal Subset Sum"**  
+- **Mô tả**: Cho một mảng số nguyên `nums`. Kiểm tra xem có thể chia mảng thành hai tập hợp con với tổng bằng nhau không.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là `true` nếu có thể chọn một tập hợp từ `nums[0..i]` với tổng bằng `j`.  
+  - Công thức:  
+    - `dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i]]`.
+
+- **Link chấm bài**:  
+  - [Leetcode 416 - Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+
+---
+
+### **7. "Interleaving String"**  
+- **Mô tả**: Cho ba chuỗi `s1`, `s2`, và `s3`. Kiểm tra xem `s3` có thể được tạo thành bằng cách xen kẽ các ký tự của `s1` và `s2` không.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là `true` nếu `s3[0..i+j-1]` có thể được tạo thành từ `s1[0..i-1]` và `s2[0..j-1]`.  
+  - Công thức:  
+    - `dp[i][j] = (s3[i+j-1] == s1[i-1] && dp[i-1][j]) || (s3[i+j-1] == s2[j-1] && dp[i][j-1])`.
+
+- **Link chấm bài**:  
+  - [Leetcode 97 - Interleaving String](https://leetcode.com/problems/interleaving-string/)
+
+---
+
+### **8. "Regular Expression Matching"**  
+- **Mô tả**: Cho một chuỗi `s` và một biểu thức `p` với các ký tự `.` (bất kỳ ký tự) và `*` (0 hoặc nhiều lần ký tự đứng trước). Kiểm tra xem `p` có khớp với `s` hay không.  
+- **Ý tưởng giải quyết**:  
+  - DP 2D với `dp[i][j]` là `true` nếu `p[0..j-1]` khớp với `s[0..i-1]`.  
+  - Công thức:  
+    - Nếu `p[j-1] == s[i-1]` hoặc `p[j-1] == '.'`: `dp[i][j] = dp[i-1][j-1]`.  
+    - Nếu `p[j-1] == '*'`: `dp[i][j] = dp[i][j-2] || (dp[i-1][j] && (s[i-1] == p[j-2] || p[j-2] == '.'))`.
+
+- **Link chấm bài**:  
+  - [Leetcode 10 - Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/)
+
+---
+
+Các bài trên đều yêu cầu bạn phát triển tư duy phân tích trạng thái và mối liên hệ giữa các trạng thái con. Chúc bạn luyện tập tốt! 😊

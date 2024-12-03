@@ -1,0 +1,45 @@
+Dưới đây là một số bài toán sử dụng thuật toán BFS từ cơ bản đến nâng cao, với các đường link tham khảo chi tiết từ các nguồn đáng tin cậy:
+
+### 1. **Bài toán tìm đường đi ngắn nhất trong đồ thị vô hướng (Shortest Path in an Unweighted Graph)**
+   - **Mô tả**: Tìm đường đi ngắn nhất từ một đỉnh đến tất cả các đỉnh còn lại trong đồ thị vô hướng.
+   - **Ứng dụng**: Phát hiện chu trình trong mạng lưới, mạng xã hội, v.v.
+   - **Giải pháp**: Sử dụng BFS, vì BFS đảm bảo rằng mỗi đỉnh được duyệt với khoảng cách ngắn nhất từ đỉnh nguồn.
+   - **Mã mẫu**: [GeeksforGeeks - Shortest Path](https://www.geeksforgeeks.org/shortest-path-in-a-binary-maze/)
+
+### 2. **Bài toán tìm đường đi ngắn nhất trong đồ thị có trọng số (Dijkstra's Algorithm)**
+   - **Mô tả**: Tìm đường đi ngắn nhất từ một đỉnh đến tất cả các đỉnh còn lại trong đồ thị có trọng số không âm.
+   - **Ứng dụng**: Điều hướng bản đồ (GPS), tối ưu hóa mạng truyền tải.
+   - **Giải pháp**: Thường kết hợp với hàng đợi ưu tiên.
+   - **Mã mẫu**: [GeeksforGeeks - Dijkstra's Algorithm](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-in-c/)
+
+### 3. **Bài toán phát hiện chu trình trong đồ thị có hướng (Cycle Detection in Directed Graphs)**
+   - **Mô tả**: Phát hiện chu trình trong đồ thị có hướng.
+   - **Ứng dụng**: Được sử dụng trong phân tích đồ thị, kiểm tra tính hợp lệ của các đồ thị hướng.
+   - **Giải pháp**: Duyệt đồ thị theo chiều rộng (BFS) và theo dõi trạng thái các đỉnh để phát hiện chu trình.
+   - **Mã mẫu**: [GeeksforGeeks - Cycle Detection](https://www.geeksforgeeks.org/detect-cycle-in-a-graph/)
+
+### 4. **Bài toán tìm thành phần liên thông trong đồ thị vô hướng (Connected Components in an Undirected Graph)**
+   - **Mô tả**: Tìm tất cả các thành phần liên thông trong đồ thị vô hướng.
+   - **Ứng dụng**: Phân tích mạng lưới xã hội, kiểm tra tính liên thông của mạng máy tính.
+   - **Giải pháp**: Sử dụng BFS hoặc DFS để duyệt qua các đỉnh chưa thăm.
+   - **Mã mẫu**: [GeeksforGeeks - Connected Components](https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/)
+
+### 5. **Bài toán tìm đường đi ngắn nhất từ một tập hợp các đỉnh nguồn đến tất cả các đỉnh còn lại (Multi-Source BFS)**
+   - **Mô tả**: Tìm đường đi ngắn nhất từ một tập hợp các đỉnh nguồn đến tất cả các đỉnh còn lại trong đồ thị.
+   - **Ứng dụng**: Tìm vị trí gần nhất từ nhiều trạm cứu hỏa, trạm xăng trong bản đồ.
+   - **Giải pháp**: Khởi tạo hàng đợi với tất cả các đỉnh nguồn và thực hiện BFS đồng thời từ tất cả các nguồn này.
+   - **Mã mẫu**: [GeeksforGeeks - Multi-Source BFS](https://www.geeksforgeeks.org/multi-source-shortest-path-in-unweighted-undirected-graph/)
+
+### 6. **Bài toán tìm các đường đi không chu kỳ trong đồ thị (Cycle-Free Path Finding)**
+   - **Mô tả**: Xác định các đường đi không có chu trình trong đồ thị.
+   - **Giải pháp**: Duyệt đồ thị theo BFS, tránh các chu trình.
+   - **Mã mẫu**: [GeeksforGeeks - Cycle-Free Path](https://www.geeksforgeeks.org/ways-to-find-cycle-free-path-in-directed-graph/)
+
+### 7. **Bài toán tìm các thành phần mạnh liên thông trong đồ thị có hướng (Strongly Connected Components in Directed Graph)**
+   - **Mô tả**: Xác định các thành phần mạnh liên thông trong đồ thị có hướng.
+   - **Giải pháp**: Sử dụng BFS kết hợp với các thuật toán như Kosaraju hoặc Tarjan.
+   - **Mã mẫu**: [GeeksforGeeks - Kosaraju's Algorithm](https://www.geeksforgeeks.org/strongly-connected-components/)
+
+GeeksforGeeks - Find Connected Components in an Undirected Graph
+
+Những bài toán này đều có ứng dụng rộng rãi trong các lĩnh vực khác nhau, từ mạng máy tính đến phân tích xã hội và bài toán tối ưu hóa. Bạn có thể tham khảo thêm chi tiết qua các link từ GeeksforGeeks và các tài liệu khác được cung cấp để hiểu rõ hơn cách giải quyết những vấn đề này.

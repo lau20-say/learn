@@ -1,0 +1,149 @@
+### **Các thuật toán đồ thị phổ biến**
+
+Thuật toán đồ thị được sử dụng rộng rãi để giải quyết các bài toán liên quan đến mối quan hệ và kết nối giữa các thực thể. Dưới đây là các thuật toán phổ biến, phân loại theo mục đích:
+
+---
+
+### **1. Duyệt đồ thị**
+
+#### **DFS (Depth-First Search):**
+- Duyệt đồ thị theo chiều sâu, sử dụng đệ quy hoặc ngăn xếp.
+- **Ứng dụng:**
+  - Kiểm tra đồ thị liên thông.
+  - Tìm tất cả các thành phần liên thông.
+  - Kiểm tra chu trình trong đồ thị.
+  - Xây dựng thứ tự topo.
+
+#### **BFS (Breadth-First Search):**
+- Duyệt đồ thị theo chiều rộng, sử dụng hàng đợi.
+- **Ứng dụng:**
+  - Tìm đường đi ngắn nhất trong đồ thị vô hướng không trọng số.
+  - Kiểm tra đồ thị hai phía (Bipartite Graph).
+  - Xác định mức độ từ một đỉnh đến các đỉnh khác.
+
+---
+
+### **2. Đường đi ngắn nhất**
+
+#### **Dijkstra:**
+- Tìm đường đi ngắn nhất từ một đỉnh đến các đỉnh khác trong đồ thị có trọng số dương.
+- **Độ phức tạp:**
+  - \(O((V + E) \log V)\) với hàng đợi ưu tiên.
+- **Ứng dụng:**
+  - Bài toán tìm đường đi nhanh nhất.
+  - Định tuyến mạng.
+
+#### **Bellman-Ford:**
+- Tìm đường đi ngắn nhất từ một đỉnh đến các đỉnh khác, cho phép trọng số âm.
+- **Độ phức tạp:** \(O(VE)\).
+- **Ứng dụng:**
+  - Phát hiện chu trình âm.
+  - Bài toán tìm đường đi trong mạng lưới có chi phí âm.
+
+#### **Floyd-Warshall:**
+- Tìm đường đi ngắn nhất giữa mọi cặp đỉnh.
+- **Độ phức tạp:** \(O(V^3)\).
+- **Ứng dụng:**
+  - Bài toán mọi cặp đường đi ngắn nhất.
+  - Kiểm tra tính liên thông.
+
+#### **SPFA (Shortest Path Faster Algorithm):**
+- Phiên bản tối ưu của Bellman-Ford, sử dụng hàng đợi để cải thiện tốc độ.
+- **Độ phức tạp trung bình:** Gần \(O(E)\).
+
+---
+
+### **3. Cây khung nhỏ nhất (Minimum Spanning Tree - MST)**
+
+#### **Prim's Algorithm:**
+- Xây dựng cây khung nhỏ nhất bằng cách bắt đầu từ một đỉnh và thêm dần các cạnh có trọng số nhỏ nhất.
+- **Độ phức tạp:**
+  - \(O((V + E) \log V)\) với hàng đợi ưu tiên.
+- **Ứng dụng:**
+  - Thiết kế mạng lưới (mạng điện, mạng máy tính).
+
+#### **Kruskal's Algorithm:**
+- Xây dựng cây khung nhỏ nhất bằng cách sắp xếp các cạnh theo trọng số và thêm lần lượt các cạnh nhỏ nhất, miễn không tạo thành chu trình.
+- **Độ phức tạp:** \(O(E \log E)\).
+- **Ứng dụng:**
+  - Thiết kế đường ống, cáp mạng.
+
+---
+
+### **4. Tìm thành phần liên thông**
+
+#### **Kosaraju's Algorithm:**
+- Xác định các thành phần liên thông mạnh (Strongly Connected Components - SCC) trong đồ thị có hướng.
+- **Độ phức tạp:** \(O(V + E)\).
+
+#### **Tarjan's Algorithm:**
+- Một cách khác để tìm SCC, sử dụng DFS và tính toán chỉ số thấp nhất (low-link values).
+- **Độ phức tạp:** \(O(V + E)\).
+
+#### **Union-Find (Disjoint Set Union - DSU):**
+- Xác định các thành phần liên thông trong đồ thị vô hướng.
+- **Độ phức tạp:** \(O(\alpha(n))\) (gần như hằng số).
+
+---
+
+### **5. Chu trình trong đồ thị**
+
+#### **Kiểm tra chu trình trong đồ thị:**
+- **DFS:** Phát hiện chu trình trong đồ thị có hướng hoặc vô hướng.
+- **Union-Find:** Kiểm tra chu trình trong đồ thị vô hướng bằng DSU.
+
+#### **Chu trình Euler:**
+- Tìm chu trình đi qua mỗi cạnh một lần.
+- **Thuật toán:**
+  - Sử dụng DFS hoặc Fleury's Algorithm.
+  - **Điều kiện:**
+    - Đồ thị vô hướng: Mọi đỉnh có bậc chẵn.
+    - Đồ thị có hướng: Bậc vào = Bậc ra.
+
+#### **Chu trình Hamilton:**
+- Tìm chu trình đi qua mỗi đỉnh đúng một lần.
+- **Độ phức tạp:** NP-Complete, thường dùng phương pháp quay lui (backtracking).
+
+---
+
+### **6. Thứ tự topo (Topological Sorting)**
+
+- Sắp xếp thứ tự các đỉnh trong đồ thị có hướng sao cho với mỗi cạnh \( u \to v \), đỉnh \( u \) xuất hiện trước \( v \).
+- **Thuật toán:**
+  - **DFS:** Sử dụng thứ tự kết thúc của DFS.
+  - **Kahn's Algorithm:** Sử dụng hàng đợi và bậc vào (in-degree).
+- **Ứng dụng:**
+  - Lập kế hoạch, phân tích phụ thuộc.
+
+---
+
+### **7. Lưu lượng cực đại (Maximum Flow)**
+
+#### **Ford-Fulkerson:**
+- Tìm lưu lượng cực đại trong mạng lưới.
+- **Độ phức tạp:** \(O(E \times \text{max flow})\).
+
+#### **Edmonds-Karp:**
+- Phiên bản của Ford-Fulkerson, sử dụng BFS để tìm đường tăng (augmenting path).
+- **Độ phức tạp:** \(O(VE^2)\).
+
+#### **Dinic's Algorithm:**
+- Sử dụng phân lớp (level graph) để cải thiện hiệu suất.
+- **Độ phức tạp:** \(O(V^2E)\) hoặc \(O(E \sqrt{V})\) cho đồ thị thưa.
+
+---
+
+### **8. Các thuật toán khác**
+
+#### **Chuỗi con dài nhất (Longest Path):**
+- Tìm đường dài nhất trong đồ thị DAG (Directed Acyclic Graph).
+- Biến đổi bài toán bằng cách đảo dấu trọng số và sử dụng thuật toán tìm đường ngắn nhất.
+
+#### **Kiểm tra đồ thị hai phía (Bipartite Graph):**
+- Sử dụng BFS hoặc DFS để tô màu hai nhóm.
+- Ứng dụng trong bài toán ghép đôi (Matching).
+
+#### **Thuật toán Floyd-Warshall cải tiến:**
+- Thay vì chỉ tìm đường đi ngắn nhất, kiểm tra độ liên thông hoặc số lượng đường đi giữa các đỉnh.
+
+---

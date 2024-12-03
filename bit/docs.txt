@@ -1,0 +1,208 @@
+Bit manipulation là một phần quan trọng trong lập trình, đặc biệt trong C++ khi làm việc với hiệu suất cao hoặc xử lý dữ liệu nhị phân. Đây là cách bạn có thể thao tác trực tiếp trên các bit của một số nguyên, giúp tăng hiệu quả và giảm chi phí tính toán so với các phép toán truyền thống.
+
+---
+
+## **1. Biểu diễn bit trong C++**
+Các số nguyên trong C++ được lưu trữ dưới dạng nhị phân (binary), tức là chuỗi các bit 0 và 1.
+
+Ví dụ:
+- Số thập phân `5` có biểu diễn nhị phân: `101`
+- Số thập phân `10` có biểu diễn nhị phân: `1010`
+
+Kích thước của các kiểu số nguyên (integer) quyết định số bit mà chúng sử dụng:
+- `int`: Thường là 32 bit.
+- `short`: 16 bit.
+- `long`: Ít nhất 32 bit.
+- `long long`: Ít nhất 64 bit.
+
+---
+
+## **2. Các phép toán bit cơ bản**
+
+| Toán tử       | Ý nghĩa                                                                                       |
+|---------------|-----------------------------------------------------------------------------------------------|
+| `&` (AND)     | Kết quả là `1` nếu cả hai bit đều là `1`, ngược lại là `0`.                                   |
+| `|` (OR)      | Kết quả là `1` nếu ít nhất một trong hai bit là `1`.                                          |
+| `^` (XOR)     | Kết quả là `1` nếu hai bit khác nhau, ngược lại là `0`.                                       |
+| `~` (NOT)     | Đảo ngược tất cả các bit (`0` thành `1` và `1` thành `0`).                                   |
+| `<<` (Left Shift)  | Dịch các bit sang trái, thêm `0` vào các bit bên phải.                                    |
+| `>>` (Right Shift) | Dịch các bit sang phải, với số dương thì thêm `0` còn số âm thì thêm `1` (dựa trên kiểu dấu). |
+
+---
+
+### **2.1. Ví dụ các phép toán**
+
+#### AND (`&`):
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 5;   // 101
+    int b = 3;   // 011
+    cout << (a & b) << endl; // Kết quả: 1 (001)
+    return 0;
+}
+```
+
+#### OR (`|`):
+```cpp
+int a = 5;   // 101
+int b = 3;   // 011
+cout << (a | b) << endl; // Kết quả: 7 (111)
+```
+
+#### XOR (`^`):
+```cpp
+int a = 5;   // 101
+int b = 3;   // 011
+cout << (a ^ b) << endl; // Kết quả: 6 (110)
+```
+
+#### NOT (`~`):
+```cpp
+int a = 5;   // 101
+cout << (~a) << endl;    // Kết quả: -6 (phủ định tất cả các bit, tính cả bit dấu)
+```
+
+#### Left Shift (`<<`):
+```cpp
+int a = 5;   // 101
+cout << (a << 1) << endl;  // Kết quả: 10 (1010 - dịch trái một vị trí)
+```
+
+#### Right Shift (`>>`):
+```cpp
+int a = 5;   // 101
+cout << (a >> 1) << endl;  // Kết quả: 2 (10 - dịch phải một vị trí)
+```
+
+---
+
+## **3. Các kỹ thuật thường dùng với bit manipulation**
+
+### **3.1. Kiểm tra bit thứ `i`**
+Bạn có thể kiểm tra xem bit thứ `i` của một số có phải là `1` hay không bằng cách sử dụng AND (`&`) với `1 << i`.
+
+```cpp
+bool isBitSet(int n, int i) {
+    return (n & (1 << i)) != 0;
+}
+
+// Ví dụ:
+int n = 5; // 101
+cout << isBitSet(n, 0) << endl; // Kết quả: true (bit 0 là 1)
+cout << isBitSet(n, 1) << endl; // Kết quả: false (bit 1 là 0)
+```
+
+---
+
+### **3.2. Đặt bit thứ `i` thành 1**
+Sử dụng OR (`|`) với `1 << i`.
+
+```cpp
+int setBit(int n, int i) {
+    return n | (1 << i);
+}
+
+// Ví dụ:
+int n = 5; // 101
+cout << setBit(n, 1) << endl; // Kết quả: 7 (111)
+```
+
+---
+
+### **3.3. Xóa bit thứ `i` (đặt bit thứ `i` thành 0)**
+Sử dụng AND (`&`) với phủ định của `1 << i`.
+
+```cpp
+int clearBit(int n, int i) {
+    return n & (~(1 << i));
+}
+
+// Ví dụ:
+int n = 5; // 101
+cout << clearBit(n, 2) << endl; // Kết quả: 1 (001)
+```
+
+---
+
+### **3.4. Đảo bit thứ `i`**
+Sử dụng XOR (`^`) với `1 << i`.
+
+```cpp
+int toggleBit(int n, int i) {
+    return n ^ (1 << i);
+}
+
+// Ví dụ:
+int n = 5; // 101
+cout << toggleBit(n, 0) << endl; // Kết quả: 4 (100)
+cout << toggleBit(n, 1) << endl; // Kết quả: 7 (111)
+```
+
+---
+
+### **3.5. Đếm số bit 1 trong một số**
+Sử dụng vòng lặp với AND (`&`).
+
+```cpp
+int countSetBits(int n) {
+    int count = 0;
+    while (n) {
+        count += n & 1; // Nếu bit cuối là 1
+        n >>= 1;        // Dịch phải để kiểm tra bit tiếp theo
+    }
+    return count;
+}
+
+// Ví dụ:
+int n = 5; // 101
+cout << countSetBits(n) << endl; // Kết quả: 2
+```
+
+---
+
+### **3.6. Kiểm tra số mũ của 2**
+Một số là lũy thừa của 2 nếu và chỉ nếu nó chỉ có đúng 1 bit 1.
+
+```cpp
+bool isPowerOfTwo(int n) {
+    return n > 0 && (n & (n - 1)) == 0;
+}
+
+// Ví dụ:
+cout << isPowerOfTwo(4) << endl; // true (4 = 100)
+cout << isPowerOfTwo(5) << endl; // false (5 = 101)
+```
+
+---
+
+### **3.7. Tìm số duy nhất trong mảng**
+Nếu mỗi số trong mảng xuất hiện 2 lần trừ 1 số xuất hiện 1 lần, bạn có thể dùng XOR để tìm số đó:
+
+```cpp
+int findUnique(vector<int>& nums) {
+    int unique = 0;
+    for (int num : nums) {
+        unique ^= num; // XOR mọi phần tử
+    }
+    return unique;
+}
+
+// Ví dụ:
+vector<int> nums = {2, 3, 2, 4, 4};
+cout << findUnique(nums) << endl; // Kết quả: 3
+```
+
+---
+
+## **4. Các bài tập thực hành**
+1. Kiểm tra xem một số là số chẵn hay lẻ chỉ dùng bit.
+2. Đảo ngược các bit trong một số 32-bit.
+3. Tìm số lớn nhất nhỏ hơn một số `n` có cùng số bit 1.
+4. Xây dựng một số từ các bit lẻ của một số nguyên.
+
+---
+
+Bit manipulation trong C++ cực kỳ mạnh mẽ và được sử dụng rộng rãi trong tối ưu hóa, thuật toán đồ họa, và hệ thống nhúng. Nếu bạn luyện tập thường xuyên, nó sẽ trở thành một công cụ rất hữu ích trong bộ kỹ năng lập trình của bạn! 🚀

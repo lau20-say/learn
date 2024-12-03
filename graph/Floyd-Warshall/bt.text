@@ -1,0 +1,49 @@
+Dưới đây là các bài tập sử dụng thuật toán Floyd-Warshall, được phân loại từ cơ bản đến nâng cao:
+
+---
+
+### **Cơ bản**
+1. **Tìm đường đi ngắn nhất giữa tất cả các cặp đỉnh (All-Pairs Shortest Path)**  
+   - **Đề bài:** Cho một đồ thị có trọng số (có thể là đồ thị vô hướng hoặc có hướng). Yêu cầu tính khoảng cách ngắn nhất giữa tất cả các cặp đỉnh.  
+   - **Ví dụ bài tập:** [SPOJ - ALLSP (All Pairs Shortest Paths)](https://www.spoj.com/problems/ALLSP/)  
+   - **Kỹ năng học được:** Hiểu cách triển khai Floyd-Warshall để tính ma trận khoảng cách giữa các cặp đỉnh.
+
+2. **Phát hiện chu trình âm (Negative Cycle Detection)**  
+   - **Đề bài:** Cho một đồ thị có trọng số, kiểm tra xem đồ thị có chứa chu trình âm hay không.  
+   - **Ví dụ bài tập:** [LeetCode - 3994: Detect Negative Cycle](https://www.geeksforgeeks.org/floyd-warshall-algorithm-detecting-negative-weight-cycle/)  
+   - **Kỹ năng học được:** Xử lý phần tử trên đường chéo chính của ma trận để phát hiện chu trình âm.
+
+---
+
+### **Trung bình**
+3. **Tính bán kính và đường kính của đồ thị**  
+   - **Đề bài:** Tìm bán kính (radius) và đường kính (diameter) của đồ thị dựa trên ma trận đường đi ngắn nhất.  
+   - **Ví dụ bài tập:** [CSES - Shortest Routes II](https://cses.fi/problemset/task/1672/)  
+   - **Kỹ năng học được:** Ứng dụng kết quả Floyd-Warshall để phân tích đồ thị sâu hơn.
+
+4. **Tìm số lượng đường đi ngắn nhất giữa hai đỉnh**  
+   - **Đề bài:** Tính số cách để đi từ đỉnh này đến đỉnh khác với khoảng cách ngắn nhất (đồ thị không có chu trình âm).  
+   - **Ví dụ bài tập:** [Codeforces - Paths on Graph](https://codeforces.com/problemset/problem/1352/D)  
+   - **Kỹ năng học được:** Kết hợp Floyd-Warshall với quy hoạch động.
+
+---
+
+### **Nâng cao**
+5. **Tối ưu hóa Floyd-Warshall với bộ nhớ**  
+   - **Đề bài:** Với đồ thị lớn, tối ưu hóa thuật toán để giảm bộ nhớ sử dụng bằng cách chỉ lưu trữ ma trận cần thiết.  
+   - **Ví dụ bài tập:** Tự triển khai trên bài toán [SPOJ - ALLSP](https://www.spoj.com/problems/ALLSP/).  
+   - **Kỹ năng học được:** Tối ưu hóa không gian cho thuật toán Floyd-Warshall.
+
+6. **Tìm trọng số lớn nhất trên đường đi ngắn nhất**  
+   - **Đề bài:** Cho một đồ thị có trọng số, tìm trọng số cạnh lớn nhất xuất hiện trên đường đi ngắn nhất giữa tất cả các cặp đỉnh.  
+   - **Ví dụ bài tập:** [Codeforces - Minimum Diameter Graph](https://codeforces.com/problemset/problem/215/D)  
+   - **Kỹ năng học được:** Kết hợp thuật toán Floyd-Warshall và các kỹ thuật phân tích đồ thị.
+
+7. **Phân tích mạng lưới giao thông**  
+   - **Đề bài:** Phân tích sự kém hiệu quả trong mạng giao thông để cải thiện đường đi giữa các thành phố.  
+   - **Ví dụ bài tập:** [UVA - Traffic Analysis](https://onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=440&page=show_problem&problem=1112)  
+   - **Kỹ năng học được:** Sử dụng Floyd-Warshall để phân tích mạng lưới thực tế.
+
+---
+
+Các bài tập trên giúp bạn nâng cao kỹ năng từ triển khai cơ bản đến ứng dụng nâng cao của Floyd-Warshall. Nếu cần giải thích thêm bất kỳ bài tập nào, mình sẵn sàng hỗ trợ!

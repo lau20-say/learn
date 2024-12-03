@@ -1,0 +1,55 @@
+Dưới đây là một số bài toán kết hợp **quy hoạch động (DP)** và **segment tree**, kèm theo link chấm bài:
+
+---
+
+### 1. **Problem: Increasing Subsequence Queries**
+- **Mô tả**: Cho một mảng các số nguyên, yêu cầu trả lời các truy vấn về số lượng dãy con tăng dài nhất kết thúc tại một vị trí bất kỳ.
+- **Kỹ thuật**: 
+  - Dùng **quy hoạch động** để tính độ dài dãy con tăng dài nhất tại mỗi vị trí.
+  - Kết hợp với **segment tree** để tối ưu hóa việc truy vấn và cập nhật giá trị lớn nhất trong các đoạn.
+- **Link chấm bài**:
+  - [Codeforces - Problem 558E](https://codeforces.com/problemset/problem/558/E)
+
+---
+
+### 2. **Problem: Maximum Sum on Subarrays**
+- **Mô tả**: Với một mảng, cho phép cập nhật giá trị tại các vị trí và truy vấn tổng lớn nhất của một dãy con trong đoạn bất kỳ.
+- **Kỹ thuật**:
+  - Dùng **segment tree** để quản lý tổng các đoạn.
+  - Kết hợp với **quy hoạch động** (Kadane's Algorithm) để tính tổng lớn nhất tại các đoạn.
+- **Link chấm bài**:
+  - [SPOJ - GSS3](https://www.spoj.com/problems/GSS3/)
+
+---
+
+### 3. **Problem: Dynamic Range Longest Common Subsequence**
+- **Mô tả**: Cho hai xâu ký tự, tính toán độ dài của dãy con chung dài nhất (LCS) trên các đoạn động (sau khi cập nhật).
+- **Kỹ thuật**:
+  - **Quy hoạch động** cho LCS.
+  - Kết hợp **segment tree** để xử lý truy vấn nhanh trên các đoạn con.
+- **Link chấm bài**:
+  - [Codeforces - Problem 145E](https://codeforces.com/problemset/problem/145/E)
+
+---
+
+### 4. **Problem: Counting Increasing Subsequences**
+- **Mô tả**: Đếm số lượng dãy con tăng có độ dài bất kỳ trong một mảng.
+- **Kỹ thuật**:
+  - **Quy hoạch động** để lưu số cách tại mỗi vị trí.
+  - Kết hợp với **fenwick tree/segment tree** để cập nhật và truy vấn nhanh.
+- **Link chấm bài**:
+  - [Codeforces - Problem 486C](https://codeforces.com/problemset/problem/486/C)
+
+---
+
+### 5. **Problem: Minimum Cost Path**
+- **Mô tả**: Tìm đường đi có tổng chi phí nhỏ nhất trong một lưới 2D, với chi phí được cập nhật động.
+- **Kỹ thuật**:
+  - Quy hoạch động để tìm đường đi tối ưu.
+  - Segment tree để tối ưu hóa việc truy vấn và cập nhật chi phí.
+- **Link chấm bài**:
+  - [AtCoder - Problem D](https://atcoder.jp/contests/dp/tasks/dp_z)
+
+---
+
+Những bài toán trên đều là các ứng dụng mạnh mẽ của việc kết hợp **quy hoạch động** và **segment tree**, rất phù hợp để thực hành thuật toán tối ưu. Bạn có thể thử nghiệm trên các nền tảng này. Nếu cần hỗ trợ thêm về cách giải chi tiết, hãy cho mình biết nhé!

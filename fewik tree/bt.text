@@ -1,0 +1,28 @@
+Here are a few interesting Fenwick Tree problems from online coding platforms, along with links to their descriptions and solutions:
+
+1. **CSES Problem Set: Range Update Queries**  
+   - Description: Update a range of elements and retrieve the value at a specific index.
+   - Techniques: Use a Fenwick Tree for efficient range updates and point queries.  
+   - Problem link: [Range Update Queries on CSES](https://cses.fi/problemset/task/1735)
+
+2. **CSES Problem Set: Range Xor Queries**  
+   - Description: Perform XOR operations on a range and answer XOR queries for any range.  
+   - Techniques: Modify the Fenwick Tree to handle XOR operations instead of sums.  
+   - Problem link: [Range Xor Queries on CSES](https://cses.fi/problemset/task/1650)
+
+3. **Codeforces Problem C: Fenwick Tree Transformations**  
+   - Description: Transform an array using a sequence of operations based on the Fenwick Tree logic and iterate multiple times.  
+   - Techniques: Understanding low-bit manipulations and the transformation process.  
+   - Problem link: [Fenwick Tree Problem on Codeforces](https://codeforces.com/problemset/problem/1967/C)
+
+4. **CSES Problem Set: Range Minimum Queries**  
+   - Description: Find the minimum in a range while supporting updates to elements.  
+   - Techniques: Fenwick Tree or Segment Tree can be used for range minimum operations.  
+   - Problem link: [Range Minimum Queries on CSES](https://cses.fi/problemset/task/1647)
+
+5. **Dynamic Range Sum Queries**  
+   - Description: Update a single element and get the sum of any range efficiently.  
+   - Techniques: Classic Fenwick Tree problem for sum queries.  
+   - Problem link: [Dynamic Range Sum Queries on CSES](https://cses.fi/problemset/task/1646)
+
+These problems are excellent for practicing Fenwick Tree applications, ranging from basic range sum queries to advanced operations like range updates and XOR computations.

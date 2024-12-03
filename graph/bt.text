@@ -1,0 +1,67 @@
+Các thuật toán trên đồ thị là các phương pháp giải quyết vấn đề trên các đồ thị (graphs), mà trong đó các đỉnh (vertices) và các cạnh (edges) kết nối chúng. Đồ thị có thể là có hướng (directed graph) hoặc vô hướng (undirected graph). Dưới đây là một số thuật toán cơ bản và phổ biến được sử dụng trong các bài toán đồ thị:
+
+### 1. **Thuật toán tìm kiếm theo chiều rộng (BFS - Breadth-First Search)**
+   - **Mục tiêu**: Duyệt qua tất cả các đỉnh của đồ thị từ một đỉnh bắt đầu theo thứ tự "tầng" (level).
+   - **Đặc điểm**: Duyệt theo tầng, khám phá các đỉnh ở độ sâu gần nhất trước. BFS có thể dùng để tìm đường đi ngắn nhất trong đồ thị vô hướng.
+   - **Cách thực hiện**: 
+     - Sử dụng hàng đợi (queue) để lưu trữ các đỉnh cần duyệt.
+     - Khởi tạo đỉnh bắt đầu vào hàng đợi và đánh dấu là đã thăm.
+     - Tiến hành duyệt tất cả các đỉnh kề của nó, thêm vào hàng đợi nếu chưa được thăm.
+
+### 2. **Thuật toán tìm kiếm theo chiều sâu (DFS - Depth-First Search)**
+   - **Mục tiêu**: Duyệt qua các đỉnh của đồ thị theo chiều sâu, đi đến hết các đỉnh con trước khi quay lại.
+   - **Đặc điểm**: Duyệt theo chiều sâu, đi tới tận đỉnh con sâu nhất rồi quay lại. DFS có thể dùng để kiểm tra chu trình trong đồ thị, tìm thành phần liên thông, hoặc thực hiện tìm kiếm đệ quy.
+   - **Cách thực hiện**:
+     - Sử dụng ngăn xếp (stack) hoặc đệ quy.
+     - Bắt đầu từ một đỉnh chưa thăm, đánh dấu nó và tiếp tục duyệt các đỉnh kề chưa thăm.
+
+### 3. **Thuật toán Dijkstra**
+   - **Mục tiêu**: Tìm đường đi ngắn nhất từ một đỉnh đến tất cả các đỉnh còn lại trong đồ thị có trọng số.
+   - **Đặc điểm**: Chỉ áp dụng cho đồ thị có trọng số không âm.
+   - **Cách thực hiện**:
+     - Sử dụng hàng đợi ưu tiên (priority queue) để luôn chọn đỉnh có chi phí nhỏ nhất.
+     - Cập nhật chi phí ngắn nhất từ đỉnh xuất phát đến các đỉnh còn lại.
+
+### 4. **Thuật toán Floyd-Warshall**
+   - **Mục tiêu**: Tìm tất cả các cặp đường đi ngắn nhất giữa tất cả các đỉnh trong đồ thị.
+   - **Đặc điểm**: Đây là một thuật toán động (dynamic programming) thích hợp cho các đồ thị có trọng số.
+   - **Cách thực hiện**:
+     - Khởi tạo ma trận chi phí ngắn nhất cho các cặp đỉnh.
+     - Cập nhật chi phí bằng cách kiểm tra tất cả các cặp đỉnh qua một đỉnh trung gian.
+
+### 5. **Thuật toán Kruskal**
+   - **Mục tiêu**: Tìm cây khung nhỏ nhất (Minimum Spanning Tree - MST) của đồ thị.
+   - **Đặc điểm**: Áp dụng cho đồ thị có trọng số.
+   - **Cách thực hiện**:
+     - Sắp xếp tất cả các cạnh theo trọng số.
+     - Duyệt qua các cạnh theo thứ tự tăng dần, thêm vào cây khung nếu không tạo chu trình.
+     - Dùng cấu trúc hợp nhất tìm (Union-Find) để kiểm tra chu trình.
+
+### 6. **Thuật toán Prim**
+   - **Mục tiêu**: Cũng tìm cây khung nhỏ nhất như Kruskal, nhưng cách tiếp cận khác.
+   - **Đặc điểm**: Dùng cho đồ thị có trọng số không âm.
+   - **Cách thực hiện**:
+     - Bắt đầu từ một đỉnh và liên tục thêm các cạnh có trọng số nhỏ nhất vào cây khung mà không tạo chu trình.
+
+### 7. **Thuật toán Bellman-Ford**
+   - **Mục tiêu**: Tìm đường đi ngắn nhất từ một đỉnh đến tất cả các đỉnh trong đồ thị có trọng số, có thể có trọng số âm.
+   - **Đặc điểm**: Khác với Dijkstra, Bellman-Ford có thể xử lý các trọng số âm và phát hiện chu trình âm.
+   - **Cách thực hiện**:
+     - Thực hiện lặp đi lặp lại n-1 lần (với n là số đỉnh) để cập nhật các giá trị đường đi ngắn nhất.
+     - Kiểm tra nếu có chu trình âm sau khi lặp xong.
+
+### 8. **Thuật toán Kosaraju hoặc Tarjan (Tìm thành phần liên thông mạnh trong đồ thị có hướng)**
+   - **Mục tiêu**: Xác định các thành phần liên thông mạnh (strongly connected components - SCC) trong đồ thị có hướng.
+   - **Đặc điểm**: Một thành phần liên thông mạnh là một tập các đỉnh mà giữa chúng có thể di chuyển qua lại được (từ bất kỳ đỉnh nào trong thành phần đến tất cả các đỉnh còn lại).
+   - **Cách thực hiện**:
+     - **Kosaraju**: Thực hiện hai lần tìm kiếm DFS, lần đầu trên đồ thị ban đầu và lần hai trên đồ thị chuyển vị.
+     - **Tarjan**: Dùng một DFS duy nhất với các công cụ hỗ trợ như stack và thời gian khám phá.
+
+### 9. **Thuật toán Topological Sort**
+   - **Mục tiêu**: Sắp xếp các đỉnh của đồ thị có hướng sao cho với mỗi cạnh (u, v), đỉnh u xuất hiện trước đỉnh v trong thứ tự.
+   - **Đặc điểm**: Chỉ áp dụng cho đồ thị có hướng và không có chu trình.
+   - **Cách thực hiện**:
+     - Sử dụng BFS với thuật toán Kahn (dựa trên độ vào của các đỉnh).
+     - Hoặc sử dụng DFS, trong đó các đỉnh được xếp vào stack theo thứ tự kết thúc duyệt.
+
+Các thuật toán này được áp dụng trong nhiều bài toán thực tế như tìm đường đi ngắn nhất, phân loại các đỉnh trong đồ thị, xác định cấu trúc của đồ thị, tối ưu hóa mạng, phân tích chu trình, v.v.

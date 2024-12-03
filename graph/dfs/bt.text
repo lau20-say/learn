@@ -1,0 +1,102 @@
+Dưới đây là danh sách các bài toán DFS (tìm kiếm theo chiều sâu - Depth First Search) từ cơ bản đến nâng cao, kèm theo mô tả ngắn gọn và liên kết đến các nền tảng có thể chấm bài.
+
+---
+
+### **1. Cơ bản**
+#### **1.1. [Flood Fill (LeetCode)](https://leetcode.com/problems/flood-fill/)**
+- **Mô tả**: Cho một ma trận 2D, bắt đầu từ một ô nhất định, đổi màu của vùng liên thông đến ô đó.
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Dễ.
+
+#### **1.2. [Number of Islands (LeetCode)](https://leetcode.com/problems/number-of-islands/)**
+- **Mô tả**: Đếm số lượng "đảo" trong một ma trận nhị phân. Một đảo được tạo thành từ các ô có giá trị `1` được kết nối theo 4 hướng.
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Trung bình.
+
+#### **1.3. [Binary Tree Paths (LeetCode)](https://leetcode.com/problems/b  inary-tree-paths/)**
+- **Mô tả**: Tìm tất cả các đường đi từ gốc đến lá trên cây nhị phân.
+- **Loại DFS**: DFS trên cây.
+- **Độ khó**: Dễ.
+
+---
+
+### **2. Trung bình**
+#### **2.1. [Surrounded Regions (LeetCode)](https://leetcode.com/problems/surrounded-regions/)**
+- **Mô tả**: Chuyển các ô `'O'` bị bao quanh bởi `'X'` thành `'X'`. Một ô `'O'` không bị bao quanh nếu nó kết nối với biên.
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Trung bình.
+
+#### **2.2. [Word Search (LeetCode)](https://leetcode.com/problems/word-search/)**
+- **Mô tả**: Kiểm tra xem một từ có tồn tại trong ma trận 2D không, bằng cách duyệt theo 4 hướng (không cho phép ô lặp lại).
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Trung bình.
+
+#### **2.3. [Permutations (LeetCode)](https://leetcode.com/problems/permutations/)**
+- **Mô tả**: Tìm tất cả các hoán vị của một mảng số nguyên.
+- **Loại DFS**: DFS trên tập hợp.
+- **Độ khó**: Trung bình.
+
+#### **2.4. [Pacific Atlantic Water Flow (LeetCode)](https://leetcode.com/problems/pacific-atlantic-water-flow/)**
+- **Mô tả**: Tìm các ô trong ma trận mà nước có thể chảy đến cả hai đại dương Thái Bình Dương và Đại Tây Dương.
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Trung bình.
+
+#### **2.5. [Connected Components in Graph (LeetCode)](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)**
+- **Mô tả**: Đếm số lượng thành phần liên thông trong đồ thị vô hướng.
+- **Loại DFS**: DFS trên đồ thị.
+- **Độ khó**: Trung bình.
+
+---
+
+### **3. Nâng cao**
+#### **3.1. [Longest Increasing Path in a Matrix (LeetCode)](https://leetcode.com/problems/longest-increasing-path-in-a-matrix/)**
+- **Mô tả**: Tìm đường đi tăng dần dài nhất trong một ma trận.
+- **Loại DFS**: DFS có ghi nhớ (memoization).
+- **Độ khó**: Khó.
+
+#### **3.2. [Course Schedule II (LeetCode)](https://leetcode.com/problems/course-schedule-ii/)**
+- **Mô tả**: Dựa vào danh sách các khóa học và thứ tự phụ thuộc, sắp xếp thứ tự các khóa học cần hoàn thành.
+- **Loại DFS**: DFS trên đồ thị có hướng.
+- **Độ khó**: Khó.
+
+#### **3.3. [Remove Invalid Parentheses (LeetCode)](https://leetcode.com/problems/remove-invalid-parentheses/)**
+- **Mô tả**: Loại bỏ số lượng tối thiểu dấu ngoặc đơn để tạo ra các chuỗi hợp lệ.
+- **Loại DFS**: DFS trên tập hợp.
+- **Độ khó**: Khó.
+
+#### **3.4. [Critical Connections in a Network (LeetCode)](https://leetcode.com/problems/critical-connections-in-a-network/)**
+- **Mô tả**: Tìm tất cả các cạnh cầu trong đồ thị (các cạnh mà nếu loại bỏ, đồ thị sẽ bị phân tách thành các thành phần liên thông).
+- **Loại DFS**: DFS trên đồ thị (Tarjan's Algorithm).
+- **Độ khó**: Khó.
+
+#### **3.5. [Word Search II (LeetCode)](https://leetcode.com/problems/word-search-ii/)**
+- **Mô tả**: Tìm tất cả các từ trong danh sách từ tồn tại trong ma trận chữ cái 2D.
+- **Loại DFS**: DFS với Trie.
+- **Độ khó**: Khó.
+
+#### **3.6. [Tree Diameter (LeetCode)](https://leetcode.com/problems/tree-diameter/)**
+- **Mô tả**: Tìm đường kính của cây (đường đi dài nhất giữa hai nút bất kỳ).
+- **Loại DFS**: DFS trên cây.
+- **Độ khó**: Khó.
+
+---
+
+### **4. Các bài tập thi đấu thuật toán**
+#### **4.1. [CSES - Count Rooms](https://cses.fi/problemset/task/1192/)**
+- **Mô tả**: Tìm số lượng phòng trong một bản đồ (ma trận 2D) được biểu diễn bởi các ô trống và tường.
+- **Loại DFS**: DFS trên ma trận.
+- **Độ khó**: Trung bình.
+
+#### **4.2. [CSES - Labyrinth](https://cses.fi/problemset/task/1193/)**
+- **Mô tả**: Tìm đường đi ngắn nhất từ điểm bắt đầu đến điểm kết thúc trong một mê cung.
+- **Loại DFS**: DFS kết hợp BFS.
+- **Độ khó**: Trung bình.
+
+#### **4.3. [CSES - Planets and Kingdoms](https://cses.fi/problemset/task/1683/)**
+- **Mô tả**: Tìm tất cả các thành phần mạnh liên thông trong đồ thị.
+- **Loại DFS**: DFS (Kosaraju hoặc Tarjan).
+- **Độ khó**: Nâng cao.
+
+---
+
+Nếu bạn muốn giải bài nào, mình có thể hỗ trợ giải thích chi tiết thuật toán hoặc cung cấp mã mẫu! 😊   

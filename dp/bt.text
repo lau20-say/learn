@@ -1,0 +1,121 @@
+Dưới đây là danh sách bài tập cho từng dạng bài quy hoạch động, kèm theo mô tả ngắn gọn và link chấm bài trên các nền tảng phổ biến như [LeetCode](https://leetcode.com), [Codeforces](https://codeforces.com), [AtCoder](https://atcoder.jp/), và [HackerRank](https://www.hackerrank.com):
+
+---
+
+### **1. Dạng cơ bản**
+#### **1.1. Dãy số**
+1. **Fibonacci Number**
+   - Mô tả: Tìm số Fibonacci thứ \(n\).
+   - Link: [LeetCode 509 - Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+2. **Climbing Stairs**
+   - Mô tả: Tính số cách để leo lên \(n\) bậc thang với mỗi bước có thể là 1 hoặc 2.
+   - Link: [LeetCode 70 - Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+
+#### **1.2. Đếm số cách**
+1. **Coin Change 1**
+   - Mô tả: Tính số cách để tạo ra một số tiền nhất định từ các đồng xu.
+   - Link: [LeetCode 518 - Coin Change II](https://leetcode.com/problems/coin-change-ii/)
+2. **Tiling Problem**
+   - Mô tả: Đếm số cách lát một lưới \(2 \times n\) bằng các mảnh gạch \(2 \times 1\).
+   - Link: [Codeforces 363B - Fence](https://codeforces.com/problemset/problem/363/B)
+
+---
+
+### **2. Dạng trên chuỗi**
+#### **2.1. Longest Common Subsequence (LCS)**
+1. **Longest Common Subsequence**
+   - Mô tả: Tìm chuỗi con chung dài nhất giữa hai chuỗi.
+   - Link: [LeetCode 1143 - Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/)
+
+#### **2.2. Edit Distance**
+1. **Edit Distance**
+   - Mô tả: Tìm số phép biến đổi ít nhất để biến chuỗi \(A\) thành \(B\).
+   - Link: [LeetCode 72 - Edit Distance](https://leetcode.com/problems/edit-distance/)
+
+#### **2.3. Palindrome**
+1. **Longest Palindromic Subsequence**
+   - Mô tả: Tìm độ dài chuỗi con Palindrome dài nhất.
+   - Link: [LeetCode 516 - Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+2. **Palindrome Partitioning II**
+   - Mô tả: Chia chuỗi thành số đoạn Palindrome ít nhất.
+   - Link: [LeetCode 132 - Palindrome Partitioning II](https://leetcode.com/problems/palindrome-partitioning-ii/)
+
+---
+
+### **3. Dạng đồ thị**
+#### **3.1. Đường đi ngắn nhất**
+1. **Floyd-Warshall**
+   - Mô tả: Tìm đường đi ngắn nhất giữa mọi cặp đỉnh trong đồ thị trọng số.
+   - Link: [HackerRank - Floyd City of Blinding Lights](https://www.hackerrank.com/challenges/floyd-city-of-blinding-lights/problem)
+2. **TSP (Travelling Salesman Problem)**
+   - Mô tả: Tìm đường đi ngắn nhất qua tất cả các thành phố.
+   - Link: [Codeforces 1506D - TSP](https://codeforces.com/problemset/problem/1506/D)
+
+#### **3.2. Số cách đi trên lưới**
+1. **Unique Paths**
+   - Mô tả: Tính số cách đi từ ô (0,0) đến ô (m-1, n-1) trên lưới.
+   - Link: [LeetCode 62 - Unique Paths](https://leetcode.com/problems/unique-paths/)
+2. **Minimum Path Sum**
+   - Mô tả: Tìm đường đi với tổng trọng số nhỏ nhất trên lưới.
+   - Link: [LeetCode 64 - Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+
+---
+
+### **4. Dạng tối ưu hóa**
+#### **4.1. Bài toán ba lô**
+1. **Knapsack 0/1**
+   - Mô tả: Tối ưu hóa giá trị vật phẩm trong ba lô với giới hạn trọng lượng.
+   - Link: [HackerRank - Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack/problem)
+2. **Partition Equal Subset Sum**
+   - Mô tả: Kiểm tra xem có thể chia mảng thành hai phần có tổng bằng nhau không.
+   - Link: [LeetCode 416 - Partition Equal Subset Sum](https://leetcode.com/problems/partition-equal-subset-sum/)
+
+---
+
+### **5. Dạng trạng thái nâng cao**
+#### **5.1. Quy hoạch động trên tập hợp (Bitmask DP)**
+1. **Travelling Salesman Problem (Bitmask)**
+   - Mô tả: Sử dụng bitmask để biểu diễn tập các thành phố đã đi qua.
+   - Link: [AtCoder - Traveling Salesman](https://atcoder.jp/contests/dp/tasks/dp_z)
+2. **Assign Tasks**
+   - Mô tả: Gán các nhiệm vụ cho các người làm sao cho tổng chi phí tối thiểu.
+   - Link: [LeetCode 1349 - Maximum Students Taking Exam](https://leetcode.com/problems/maximum-students-taking-exam/)
+
+#### **5.2. Quy hoạch động trên cây**
+1. **Independent Set**
+   - Mô tả: Tìm tập hợp đỉnh độc lập lớn nhất trên cây.
+   - Link: [Codeforces - Tree Independent Set](https://codeforces.com/problemset/problem/160/D)
+
+---
+
+### **6. Dạng trò chơi**
+1. **Nim Game**
+   - Mô tả: Tìm chiến lược thắng trong trò chơi lấy quân cờ.
+   - Link: [LeetCode 292 - Nim Game](https://leetcode.com/problems/nim-game/)
+2. **Stone Game**
+   - Mô tả: Hai người chơi lấy đá, ai tối ưu hơn sẽ thắng.
+   - Link: [LeetCode 877 - Stone Game](https://leetcode.com/problems/stone-game/)
+
+---
+
+### **7. Dạng toán học**
+1. **Perfect Squares**
+   - Mô tả: Tìm số ô vuông nhỏ nhất cộng lại thành \(n\).
+   - Link: [LeetCode 279 - Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+2. **Integer Break**
+   - Mô tả: Phân tích \(n\) thành tổng các số sao cho tích là lớn nhất.
+   - Link: [LeetCode 343 - Integer Break](https://leetcode.com/problems/integer-break/)
+
+---
+
+### **8. Dạng nâng cao khác**
+1. **Maximum Profit in Job Scheduling**
+   - Mô tả: Lập lịch công việc tối ưu hóa lợi nhuận.
+   - Link: [LeetCode 1235 - Maximum Profit in Job Scheduling](https://leetcode.com/problems/maximum-profit-in-job-scheduling/)
+2. **Russian Doll Envelopes**
+   - Mô tả: Tìm số phong bì lồng vào nhau lớn nhất.
+   - Link: [LeetCode 354 - Russian Doll Envelopes](https://leetcode.com/problems/russian-doll-envelopes/)
+
+---
+
+Nếu cần hướng dẫn chi tiết về bài nào hoặc cách tiếp cận giải bài, hãy cho tôi biết! 😊

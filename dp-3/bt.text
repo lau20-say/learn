@@ -1,0 +1,56 @@
+Dưới đây là một số bài toán quy hoạch động trên mảng 3 chiều giúp bạn rèn luyện tư duy và kỹ năng xử lý:
+
+1. **Cherry Pickup**  
+   - **Mô tả**: Đây là một bài toán kinh điển về tìm đường tối ưu trên lưới với các ràng buộc cụ thể. Bạn cần thu thập số cherry tối đa trong lưới \(n \times n\) và quay lại điểm bắt đầu. Bài này yêu cầu sử dụng mảng 3 chiều để lưu trạng thái DP.
+   - **Link bài tập**: [Cherry Pickup - LeetCode](https://leetcode.com/problems/cherry-pickup/).
+4. **Jump Game II**  
+   - **Mô tả**: Bài toán này là biến thể nâng cao của Jump Game, trong đó bạn cần tính số bước nhảy ít nhất để tới đích. Mặc dù thường được giải bằng mảng 2 chiều, bạn có thể mở rộng để luyện tập tư duy xử lý đa chiều.
+   - **Link bài tập**: [Jump Game II - LeetCode](https://leetcode.com/problems/jump-game-ii/).
+
+Ngoài ra, bạn có thể tham khảo danh sách bài tập quy hoạch động được phân loại tại [Dynamic Programming Problems - LeetCode](https://leetcode.com/problem-list/dynamic-programming/) để tìm thêm các bài toán phù hợp.
+
+
+Here are some LeetCode problems that involve dynamic programming with a 3-dimensional DP array:
+
+---
+
+### 1. **[Wildcard Matching](https://leetcode.com/problems/wildcard-matching/)**
+This problem involves matching a string with a pattern that includes `*` and `?` as wildcard characters. A possible 3D DP approach could involve tracking:
+- The current character in the string.
+- The current character in the pattern.
+- Additional states like the count of consecutive wildcards.
+
+---
+
+### 2. **[Dungeon Game](https://leetcode.com/problems/dungeon-game/)**
+In this problem, you must find the minimum health needed to traverse a dungeon grid. A 3D DP table can be used if there are constraints on the path taken (e.g., limiting diagonal moves or adding a third resource like "stamina").
+
+---
+
+### 3. **[Super Egg Drop](https://leetcode.com/problems/super-egg-drop/)**
+In this problem, you determine the minimum number of moves to find the critical floor from which eggs break. A possible DP state is `dp[k][m][f]`, where:
+- `k` is the number of eggs,
+- `m` is the number of moves,
+- `f` is the floor range being considered.
+
+---
+
+### 4. **[Paint House III](https://leetcode.com/problems/paint-house-iii/)**
+In this problem, houses must be painted with specific constraints. The DP state could be:
+- `dp[i][j][k]`:
+  - `i`: The first `i` houses,
+  - `j`: The last painted house color,
+  - `k`: The number of neighborhoods formed.
+
+---
+
+### 5. **[K Inverse Pairs Array](https://leetcode.com/problems/k-inverse-pairs-array/)**
+This problem finds the number of arrays that form `k` inverse pairs. A possible 3D DP state is:
+- `dp[n][k][x]`, where:
+  - `n`: Number of elements,
+  - `k`: Number of inverse pairs,
+  - `x`: Additional constraints like bounds.
+
+---
+
+These problems illustrate how 3D DP states help manage complex interdependencies. Explore their solutions directly on LeetCode to see implementations in practice. If you need help with one specific problem, let me know!
